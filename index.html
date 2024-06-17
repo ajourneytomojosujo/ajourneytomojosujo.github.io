@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>A Journey to Mojosujo</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="45a11a7c-20c4-420b-a5ad-1615ccfa05db" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1546188995-2936250e7c2f?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">A Journey to Mojosujo</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="eccef37b-8105-4c7a-97e4-e07a83748ad0"><div style="font-size:1.5em"><span class="icon">➡️</span></div><div style="width:100%">Year 11 English Standard<p id="285751a7-d341-448f-b0a5-44c63adbcccb" class="">Assessment Task 2 - Multimodal Text</p><p id="983383dd-df64-414d-baf7-ba929d094f28" class="">Miss Kitong and Mr McGuire</p><p id="e6a0bd4e-672e-4c66-bf3c-210edf25ada2" class="">Due Tuesday 18 June 2024</p><p id="0c820a33-1a9d-4ba0-85b9-e192480c0683" class="">By Jed Imasuen-Brodrick</p></div></figure><nav id="fff08d42-e8b8-4e05-a35c-b9f66086b64e" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a600ab5f-2f1c-40fe-85e0-b286a0c43dfa">Thesis</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d1c26ad2-3425-4585-b6fa-5bb4c2cc5962">Introduction</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9b68b533-92b3-4d1c-865d-075c23ce3349">Executive Summary</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#af2e613d-84e8-4e6c-9268-fe5db440fa47">The Visual Form</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0fd88c97-fcd7-4f2d-a059-60c2b8444817">The Auditory Form</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ac4824e6-e529-4913-95a9-16940ea126f6">The Digital Form</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d26638b2-e149-443b-a4b5-947eb922fca0">Conclusion</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1c0c9e6d-02e2-4eec-a893-f2ff545a85ba">About the Website’s Name</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d8d1350f-63f0-45ab-a35c-7254b8049b0a">Bibliography</a></div></nav><h3 id="a600ab5f-2f1c-40fe-85e0-b286a0c43dfa" class="">Thesis</h3><p id="c6f3eae3-00ce-46d6-90be-cd1c41bdd214" class=""><em>The Boat</em>, <a href="http://www.namleonline.com">originally written by Nam Le</a> and adapted into the <a href="https://www.sbs.com.au/theboat/">interactive multimodal text by Matt Huynh</a>, as well as <em><a href="https://www.youtube.com/watch?v=C4SUrL_3C3M">Fate Will Guide You, </a></em><a href="https://www.youtube.com/watch?v=C4SUrL_3C3M">the musical and its corresponding video</a>, both use a range of contemporary technologies in order to engage with a global audience.</p><h3 id="d1c26ad2-3425-4585-b6fa-5bb4c2cc5962" class="">Introduction</h3><figure id="4f50675e-f4d7-4a7f-9ca2-560eb4b666cf" class="image"><a href="A%20Journey%20to%20Mojosujo%2045a11a7c20c4420ba5ad1615ccfa05db/Untitled.png"><img style="width:708px" src="A%20Journey%20to%20Mojosujo%2045a11a7c20c4420ba5ad1615ccfa05db/Untitled.png"/></a><figcaption>The title ‘page’ of <em>The Boat</em>.</figcaption></figure><p id="f6c57878-88c4-49a6-aaca-84ba6a884a8a" class=""><em>The Boat, </em>as an interactive experience, was first published by the Special Broadcasting Service, known by the initialism SBS, in 2015, incorporating visual, auditory, digital and textual forms of communication. This marked the 40th year since the Fall of Saigon and the subsequent resettlement of Vietnamese refugees in Australia. (Huynh) The story follows the fictional 16 year old Mai, who is sent by her mother to an unknown man, who takes her and hundreds of others, on a collapsing fishing boat to escape the north Vietnamese communist regime.</p><figure id="002e10ab-2a21-4f0b-86d1-22cee6f3a75f" class="image"><a href="A%20Journey%20to%20Mojosujo%2045a11a7c20c4420ba5ad1615ccfa05db/Untitled%201.png"><img style="width:1280px" src="A%20Journey%20to%20Mojosujo%2045a11a7c20c4420ba5ad1615ccfa05db/Untitled%201.png"/></a><figcaption>The thumbnail of <em>Fate Will Guide You</em>.</figcaption></figure><p id="2eed998d-4431-4dab-9ed5-97b01179cbea" class=""><em>La Sorto Gvidos Vin</em>, from here on in this essay known by its translated English title, <em>Fate Will Guide You</em>, is an amateur, one-off musical created by the Tutmonda Esperantista Junulara Asocio (World Esperanto Youth Organisation) and posted to the video-sharing social media site YouTube in August 2023, with a runtime of approximately 53 minutes. (Kontribiuntoj de Vikipedio, 2024) It is written and performed with a comedic tone, intended to amuse the audience. It contains a multitude of niche references, memes and in-jokes specific to the Esperanto language community, with small clips interspaced throughout the work.</p><h3 id="9b68b533-92b3-4d1c-865d-075c23ce3349" class="">Executive Summary</h3><p id="4a894db4-fe6a-42be-9128-3ab6618c266c" class="">The multimodal text that you will interact with will delve into how the two texts <em>The Boat</em> and <em>Fate Will Guide You</em> use visual, auditory and digital forms, including art styles, diegetic and non-diegetic sounds, and computer-specific tools and techniques, which come together to create an experience which grabs the attention of the audience and keeps them engaged.</p><h3 id="af2e613d-84e8-4e6c-9268-fe5db440fa47" class="">The Visual Form</h3><p id="a875d7b9-1419-4d4c-ba9f-b0b41a225b93" class="">In both Huynh’s <em>The Boat</em> and <em>Fate Will Guide You</em> by TEJO, the visual form has been utilised to engage with an audience from across the world.</p><figure id="84b0ccbc-c106-4e65-aff3-2b8709118fe5" class="image"><a href="A%20Journey%20to%20Mojosujo%2045a11a7c20c4420ba5ad1615ccfa05db/Screenshot_2024-06-17_at_21.57.35.png"><img style="width:2614px" src="A%20Journey%20to%20Mojosujo%2045a11a7c20c4420ba5ad1615ccfa05db/Screenshot_2024-06-17_at_21.57.35.png"/></a><figcaption>An example of the art style used in <em>The Boat.</em></figcaption></figure><p id="a779ffd7-bafb-47e0-8ac0-71af64bf2254" class="">The art style of the illustrations provided in <em>The Boat</em> are produced with a monochromatic colour palate throughout; each watercolour picture only contains white, black and different shades of grey. This is intentional, used with the intention to make the reader empathise with the depressing situations that Mai, Truong and the other characters experience as they are thrown around, battered by storms and almost drowning in order to find a safer place than communist-controlled 1970s Vietnam.</p><figure id="2b6da435-fa64-40b4-a002-84f9113adba3"><div class="source"><a href="https://www.youtubetrimmer.com/view/?v=C4SUrL_3C3M&amp;start=2233&amp;end=2357&amp;loop=0">https://www.youtubetrimmer.com/view/?v=C4SUrL_3C3M&amp;start=2233&amp;end=2357&amp;loop=0</a></div><figcaption>The section of <em>Fate Will Guide You</em> that is in reference to the following paragraph.</figcaption></figure><p id="842926d9-6af6-4a0b-82cf-6f4140ff6628" class="">As <em>Fate Will Guide You</em> is available to us in the form of a video, it uses the visual form in a different manner, using dancing to keep the reader engaged with the story. In the musical, dancing is used to accompany the seven songs, each with different routines. For example, the fifth song, <em><a href="https://youtu.be/C4SUrL_3C3M?t=2213">Volontulo de TEJO</a></em><a href="https://youtu.be/C4SUrL_3C3M?t=2213"> (Volunteer of TEJO), found at 36 minutes and 53 seconds into the film</a>, features physical actions describing what Harry considers doing after being fired from his job, Also incorporated are umbrellas, used as a prop and spun around to keep the audience engaged.</p><p id="daf615aa-d48f-4342-b0f1-45254b45df8e" class="">These are just a small handful of visual techniques that have been used to immerse the reader into the worlds of <em>The Boat</em> and <em>Fate Will Guide You</em>.</p><h3 id="0fd88c97-fcd7-4f2d-a059-60c2b8444817" class="">The Auditory Form</h3><p id="ed4e06a6-19d4-41f3-89bc-45b5fe20cbe8" class=""><em>The Boat</em> and its related text <em>Fate Will Guide You</em> have together used the auditory form to engage with an international audience. </p><figure id="5aa2b5a3-86cf-4381-9709-54280dc103d2" class="image"><a href="A%20Journey%20to%20Mojosujo%2045a11a7c20c4420ba5ad1615ccfa05db/Screenshot_2024-06-13_at_10.18.46.png"><img style="width:708px" src="A%20Journey%20to%20Mojosujo%2045a11a7c20c4420ba5ad1615ccfa05db/Screenshot_2024-06-13_at_10.18.46.png"/></a><figcaption>The lyrics of the song that is sung in Mai’s dream.</figcaption></figure><p id="93783748-cc42-4d09-af9b-5c11a35231f0" class="">In Mai’s dream of her mother singing to her, a traditional Vietnamese song plays in the background as the user scrolls, with a translation of the lyrics into English on the screen. This allows the audience to experience what her life back home was like, calm and peaceful, before being crammed onto the cramped boat without her family, and empathise with them and the other characters in <em>The Boat.</em></p><figure id="8e8bc1c0-e630-4f6f-a0eb-23073eace536"><div class="source"><a href="https://www.youtubetrimmer.com/view/?v=C4SUrL_3C3M&amp;start=670&amp;end=691&amp;loop=0">https://www.youtubetrimmer.com/view/?v=C4SUrL_3C3M&amp;start=670&amp;end=691&amp;loop=0</a></div><figcaption>The section of <em>Fate Will Guide You</em> containing the lyrics shown further below.</figcaption></figure><p id="7f5ab6c4-dddf-4732-8624-9cd590a5dd61" class="">On the other hand, <em>Fate Will Guide You</em> also contains a song, well, in this case, seven. The musical contains seven original songs, each with the intention to show the audience how each of the characters feels at the moment. As an example, a sample of the lyrics of the second song <em>Kanto pri Kantoverkado</em> (A Song about Songwriting) are:</p><blockquote id="e46f7d0b-129d-4bb3-9c3c-7fa70728bd85" class="">Tri indiviuuloj provas kunverki kanton<br/>Kio estos nia tem’?<br/>Emocioj ĝis extrem’!<br/></blockquote><p id="126ec471-cb0a-454d-82b6-a7326bbc844f" class="">(KantarViki, 2024)</p><p id="59581067-fb39-465c-8121-0b09c2cf7bc7" class="">These translate to:</p><blockquote id="6cf2c869-2796-4fba-a2bb-ffbfc32b7c79" class="">Three individuals try to write a song together<br/>What will our topic be?<br/>Emotions to the extreme!<br/></blockquote><p id="1286673a-096a-4522-bf42-267913c22cfa" class="">As shown, the lyrics are explicit in depicting the thoughts of Dan, Kim and Tom of the band <em>The Jewels.</em></p><p id="f00aa758-2a7b-4a81-8690-5b560dd5ba6e" class="">For these reasons, the auditory form has been used in both texts to engage the audience.</p><h3 id="ac4824e6-e529-4913-95a9-16940ea126f6" class="">The Digital Form</h3><p id="f0ec7c01-c09d-4518-bab4-809fa961b6ba" class="">The texts <em>The Boat</em> and <em>Fate Will Guide You</em> both take advantage of the digital form in order to engage with an audience on the global stage. </p><figure id="a5f024e1-1776-4c98-8e74-0b158519f461"><div class="source"><a href="A%20Journey%20to%20Mojosujo%2045a11a7c20c4420ba5ad1615ccfa05db/Screen_Recording_2024-06-17_at_22.15.46.mov">https://prod-files-secure.s3.us-west-2.amazonaws.com/b6094a3e-478b-4e02-a5f8-3f41f6e72d23/22dc987d-54e2-4859-a2d1-d68363efe3d7/Screen_Recording_2024-06-17_at_22.15.46.mov</a></div><figcaption>An example showing how the text of <em>The Boat</em> is one continuously scrolling page.</figcaption></figure><p id="96f7246b-4d9b-4079-ba2d-67b8cb639362" class="">Huynh’s interactive multimodal text is laid out as one continuous webpage (as like the one you are on right now), making the user scroll to progress through the story. This manual control of the text is what engages the reader; they constantly have to interact with the page, catching their focus.</p><figure id="02d7432e-15b0-4f41-bc94-e03689422e5d"><div class="source"><a href="A%20Journey%20to%20Mojosujo%2045a11a7c20c4420ba5ad1615ccfa05db/Screen_Recording_2024-06-17_at_22.22.12.mov">https://prod-files-secure.s3.us-west-2.amazonaws.com/b6094a3e-478b-4e02-a5f8-3f41f6e72d23/ed3797a7-6b04-4923-b364-99daa9b50d76/Screen_Recording_2024-06-17_at_22.22.12.mov</a></div><figcaption>An example of the user switching between Esperanto, English and Spanish captions.</figcaption></figure><p id="44c3fd3b-4a7c-47a7-8c2e-f9e1a9339c17" class=""><em>Fate Will Guide You</em> takes a divergent route. As it is found in the form of a video on the social media site YouTube, it uses the digital form as the utilisation of multilingual captions. It allows the user to change the language of the subtitles into one of ten manually translated languages, or any one that is supported by Google Translate, using the power of machine learning.</p><p id="7491232f-3318-4168-9259-aca2deb6bea3" class="">Therefore, these texts use the digital form to engage with the audience.</p><h3 id="d26638b2-e149-443b-a4b5-947eb922fca0" class="">Conclusion</h3><p id="852ba24e-9b59-4985-9aac-152ad9e80fe0" class="">To summarise, Matt Huynh and TEJO both use, in different yet similar ways, the visual, auditory and digital forms in contemporary technologies to engage with a global audience. Using these tools has provided the users and viewers with new insight into the way they see the world.</p><h3 id="1c0c9e6d-02e2-4eec-a893-f2ff545a85ba" class="">About the Website’s Name</h3><p id="360978bd-3638-48b8-97f0-9a7f3cefd92d" class="">The name <em>A Journey to Mojosujo</em> has been deliberately chosen to evoke a feeling of narrative fiction while incorporating truths about Vietnamese migration to Australia and Esperanto culture. The part of Mai’s life that we see in <em>The Boat</em> is just a small and condensed snapshot into her escape from her war-torn home, and the text leaves us not knowing where she ends up. <a href="https://en.wiktionary.org/wiki/Mojosujo">Mojosujo</a><em> </em>(in the Esperanto orthography,  ‘J’ is pronounced as ‘Y’) is a fictional country that stems from a joke made in <a href="https://www.youtube.com/watch?v=B7c2KAvKeSw">a YouTube video from almost a decade ago</a>, created to avoid explaining the concept of constructed languages to the average person.  (Evildea, 2015) (Wiktionary, 2023) Therefore, the characters in <em>The Boat</em> can be seen as going to a land that may not even exist, ergo, Mojosujo.</p><h3 id="d8d1350f-63f0-45ab-a35c-7254b8049b0a" class="">Bibliography</h3><p id="e9092c72-67c1-42a7-ba5a-c867ef59efb3" class="">Evildea. (2015, April 12). <em>I’m From Mojosujo! [VBLOG #008]</em>. YouTube; YouTube. https://www.youtube.com/watch?v=B7c2KAvKeSw</p><p id="c1cb5a0c-e529-49de-a3de-c86dc4e98bc8" class="">Huynh, M. (2015). <em>THE BOAT</em>. MATT HUYNH. https://www.matthuynh.com/theboat<br/>KantarViki. (2024, March 3). <br/><em>Kanto pri kantoverkado [KantarViki]</em>. KantarViki. https://kantaro.ikso.net/kanto_kantoverkado</p><p id="b9a1a02d-f62a-493e-b790-aa87c1ba7324" class="">Kontribiuntoj de Vikipedio. (2024, March 3). <em>La sorto gvidos vin</em>. Vikipedio; Wikimedia Foundation. https://eo.wikipedia.org/wiki/La_sorto_gvidos_vin</p><p id="1b2ff2f7-ff87-4c5b-85fd-a109ab187b0d" class="">Le, N. (n.d.). <em>Nam Le</em>. The Boat | the Official Website; Nam Le. Retrieved June 17, 2024, from http://www.namleonline.com</p><p id="2fab5bad-68fd-4896-bed1-d87e122cc1a8" class="">Le, N., &amp; Huynh, M. (2019). <em>The Boat</em>. SBS; Special Broadcasting Service. https://www.sbs.com.au/theboat/</p><p id="b500ed7d-f249-405e-88f5-8e23224670e7" class="">Wiktionary. (2023, August 26). <em>Mojosujo</em>. Wiktionary; Wikimedia Foundation. https://en.wiktionary.org/wiki/Mojosujo</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="58709bd3-b1af-40bc-a7f2-563fbbfea2f5"><div style="font-size:1.5em"><span class="icon">©️</span></div><div style="width:100%">Jed Imasuen-Brodrick, 2024</div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
